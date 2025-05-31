@@ -1,0 +1,124 @@
+
+.adlam-display-regular {
+  font-family: "ADLaM Display", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "ADLaM Display", system-ui;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.example-class { font-family: 'ABeeZee'; }
+/* body {
+    background-color: #536594 ;
+    /* min 952 max 1242 */
+    /* background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}  */
+
+.navbar {
+  height: 25vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+
+
+
+
+/* 
+#d5cd69
+#536594 
+#232B3F
+#E9CD83 
+#FFFFFF */
+
+
+
+
+
+a {
+  display: block;
+  color: white;
+  float: right;
+  text-align: center;
+  padding: 14px 34px;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.navbar a:hover {
+  font-size: 30px;
+}
+
+.active {
+  background-color: #e7e482;
+  color: #232B3F;
+}
+
+
+.fa-bars {
+  color: white;
+}
+
+
+h2 {
+  color: white;
+  font-size: 26;
+  isolation: isolate;
+}
+
+ #index {
+  height: 100vh;
+  display: grid;
+  position: relative;
+  background-color: #536594;
+}
+
+#index::before {
+  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
+  background-size: cover;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+} 
+
+
+#project {
+  height: 100vh;
+  display: grid;
+  background-color: #232B3F;
+}
+
+#contact {
+  height: 75vh;
+  display: grid;
+  background-color: #536594;
+}
+
+#footer {
+  height: 25vh;
+  display: grid;
+  position: relative;
+  background-color:  #536594;
+}
+
+#footer::before {
+background-image: url(../images/footer-michael-dziedzic-qDG7XKJLKbs-unsplash.JPG);
+background-size: cover;
+content: "";
+position: absolute;
+inset: 0;
+opacity: 0.4;
+}
