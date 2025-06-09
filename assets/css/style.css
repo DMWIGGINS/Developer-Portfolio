@@ -39,14 +39,28 @@
 #project {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  column-gap: 2em;
+  row-gap: 2em;
+  padding: 2em;
    
 }
  
 
-
+ .responsive {
+  width: 100%;
+  height: auto;
+ }
 
  #projectone {
+  color: white;
+  vertical-align: center;
+  text-align: center;
+  grid-column: 1 / 2;
+  grid-row: 3;
+}
+
+#projecttwo {
   color: white;
   vertical-align: center;
   text-align: center;
@@ -54,22 +68,11 @@
   grid-row: 3;
 }
 
-
- 
-
-#projecttwo {
-  color: white;
-  vertical-align: center;
-  text-align: center;
-  grid-column: 3 / 4;
-  grid-row: 3;
-}
-
 #projectthree {
   color: white;
   vertical-align: center;
   text-align: center;
-  grid-column: 4 / 5 ;
+  grid-column: 3 / 4 ;
   grid-row: 3;
 }
 
@@ -77,20 +80,20 @@
   color: white;
   vertical-align: center;
   text-align: center;
-  grid-column: 5 / 6;
+  grid-column: 4 / 5;
   grid-row: 3;
 } 
 
-  .w3-card, .w3-yellow {
+  /* .w3-card, .w3-yellow {
     color:#000!important;background-color:#e7e482!important;
     margin: auto;
     
     
-  }
+  } */
 
-img {
+/* img {
   padding: 2em;
-}
+} */
 
 #contactme {
   background-color: #536594;
@@ -150,8 +153,11 @@ nav a:hover {
 }
 
 .active {
-  background-color: #e7e482;
-  color: #232B3F;
+  background-color: #e7e482; 
+  color: #232B3F; 
+  /* border-top:#e7e482;
+  border-style: solid;
+  border-style: 1px; */
 }
 
 .nav-toggle {
@@ -164,13 +170,13 @@ nav a:hover {
 .nav-toggle-label {
   
   color: white;
-  grid-column: 6;
+  grid-column: 4;
   grid-row: 1;
   
 }
 
 nav {
-  grid-column: 1 / 7;
+  grid-column: 1 / 5;
   grid-row: 1; 
   
 }
@@ -200,7 +206,7 @@ h2 {
 }
 
 h2 {
-  grid-column: 1 / 7;
+  grid-column: 1 / 5;
   grid-row: 2;
 }
 
@@ -227,9 +233,12 @@ p {
   background-color:  #536594;
   color: white;
   text-align: center;
+  outline-style: solid;
+  outline-color:#e7e482;
+  outline-width: 5px;
 }
 #footer {
-  grid-column: 1 / 7;
+  grid-column: 1 / 5;
   grid-row: 4 / 5;
 }
 
