@@ -2,110 +2,175 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  height: 100vh;
+}
 #index {
   position: relative;
   background-color: #536594;
   color: white;
-  height: 100vh;
 }
-
-#index {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 3fr 1fr 1fr;
-  
-}
-
-
 
 #index::before {
   background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
   background-position: center;
-  width: 100%;
-  height: 100vh;
   background-size: cover;
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .6;
+  opacity: .5;
   background-repeat: no-repeat;
 } 
 
-  #project {
-  background-color: #232B3F;
+#index {
+  display: grid;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". bio bio bio bio .";
+                 
   height: 100vh;
+  
+}
+
+nav { grid-area: nav; }
+#aboutme { grid-area: aboutme; }
+#bio  { grid-area: bio; }
+
+
+
+
+#project {
+  position: relative; 
+  background-color: #0b81b6;
+  color: white; 
 } 
+
+#project::before {
+  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .7;
+  background-repeat: no-repeat;
+}
 
 #project {
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
-  column-gap: 2em;
-  row-gap: 2em;
-  padding: 2em;
-   
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                      "projectheading projectheading projectheading projectheading projectheading projectheading"
+                      ".  projectone projectone projectone projectone ."
+                      ".  projecttwo projecttwo projecttwo projecttwo ."
+                      ". projectthree projectthree projectthree projectthree ."
+                      ".  projectfour projectfour projectfour projectfour .";
+  column-gap: 3em;
+  row-gap: 3em;
+
 }
- 
+
+nav { grid-area: nav; }
+#projectheading { grid-area: projectheading; }
+#projectone  { grid-area: projectone; }
+#projecttwo  { grid-area: projecttwo; }
+#projectthree  { grid-area: projectthree; }
+#projectfour  { grid-area: projectfour; }
 
  .responsive {
   width: 100%;
+  max-width: 300px; 
   height: auto;
  }
 
- #projectone {
-  color: white;
+.projectcard {
+  color: #232B3F;
+  background-color:#e7e482;
   vertical-align: center;
   text-align: center;
-  grid-column: 1 / 2;
-  grid-row: 3;
+  z-index: 999;
+  margin-bottom: 25px;
+
 }
 
-#projecttwo {
-  color: white;
-  vertical-align: center;
-  text-align: center;
-  grid-column: 2 / 3;
-  grid-row: 3;
+.projectcard > a > img.icon-default {
+  display: block;
 }
 
-#projectthree {
-  color: white;
-  vertical-align: center;
-  text-align: center;
-  grid-column: 3 / 4 ;
-  grid-row: 3;
+.projectcard:hover > a > img.icon-default {
+  display: none;
 }
 
-#projectfour {
+.projectcard > a > img.icon-hover {
+  display: none
+}
+
+.projectcard:hover > a >  img.icon-hover {
+  display: block;
+}
+
+
+.icon-default {
+display: block;
+}
+
+.icon-hover {
+  display: none;
+}
+
+
+.projectcard:hover {
   color: white;
-  vertical-align: center;
-  text-align: center;
-  grid-column: 4 / 5;
-  grid-row: 3;
-} 
+  background-color: #232B3F;
+}
 
-  /* .w3-card, .w3-yellow {
-    color:#000!important;background-color:#e7e482!important;
-    margin: auto;
-    
-    
-  } */
 
-/* img {
-  padding: 2em;
-} */
+ img {
+  padding: 3em;
+}  
 
 #contactme {
-  background-color: #536594;
+ position: relative;
+ background-color: #232B3F;
+ color: white;
 }
+
+#contactme::before {
+  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .4;
+  background-repeat: no-repeat;
+} 
+
 
 
 #contactme {
   display: grid;
-  grid-template-rows: auto auto auto auto; 
-  grid-template-columns: 1fr 3fr 1fr 1fr;
-  height: 100vh;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "contactheading contactheading contactheading contactheading contactheading contactheading"
+                       ". connectinvite connectinvite connectinvite connectinvite ."
+                       ". contactform contactform contactform contactform ."
+                       "footer footer footer footer footer footer";
+  column-gap: 0;
+  row-gap: 3em;
 }
+
+nav { grid-area: nav; }
+#contactheading { grid-area: contactheading; }
+#connectinvite  { grid-area: connectinvite; }
+#contactform { grid-area: contactform; }
+#footer { grid-area: footer }
+
 
 .adlam-display-regular {
   font-family: "ADLaM Display", system-ui;
@@ -113,10 +178,11 @@
   font-style: normal;
 }
 
-.abeezee { font-family: 'ABeeZee'; }
-
-
-
+.abeezee { 
+  font-family: 'ABeeZee'; 
+  font-weight: 400;
+  font-style: normal;
+}
 
 nav {
   font-size: 15px;
@@ -124,22 +190,17 @@ nav {
   display: none;
 }
 
-
-
 nav ul {
   list-style-type: none;
-   margin-top: 1em;
+  margin-top: 1em;
   padding: 0;
   
 }
 
 nav li {
   margin-right: 1em; 
- 
 
 }
-
-
 
 nav a {
 
@@ -148,17 +209,7 @@ nav a {
   isolation: isolate;
 }
 
-nav a:hover {
-  font-size: 20px; 
-}
 
-.active {
-  background-color: #e7e482; 
-  color: #232B3F; 
-  /* border-top:#e7e482;
-  border-style: solid;
-  border-style: 1px; */
-}
 
 .nav-toggle {
   position: absolute;
@@ -167,16 +218,15 @@ nav a:hover {
   height: 0;
 }
 
-.nav-toggle-label {
-  
+.nav-toggle-label {  
   color: white;
-  grid-column: 4;
+  grid-column: 6;
   grid-row: 1;
   
 }
 
 nav {
-  grid-column: 1 / 5;
+  grid-column: 1 / 7;
   grid-row: 1; 
   
 }
@@ -193,62 +243,114 @@ nav {
   float: right;
   margin-top: 1em;
   margin-right: 1em;
- 
 
-  
 }
+
+
+hr.rounded {
+  display: none;
+}
+
 
 h2 {
   color: white;
   font-size: 26px;
   isolation: isolate;
   text-align: center;
+ 
 }
 
-h2 {
-  grid-column: 1 / 5;
-  grid-row: 2;
-}
-
-.abeezee {
-  font-family: 'ABeeZee'; 
+#bio {
   color: white;
   isolation: isolate;
+  margin-bottom: 4em;
+  font-size: 16px;
 }
 
-.abeezee {
-  grid-column: 2 / 3;
-  grid-row: 3;
-  height: 50vh;
-}
-
- 
-
-p {
+#connectinvite {
+  font-size: 18px;
   isolation: isolate;
+
+}
+
+#contactform {
+  display: grid;
+  isolation: isolate;
+  font-size: 20px;
+  background-color: #232B3F;
+  padding: 30px;
+  border: 1px solid #e7e482;
+
+}
+
+label {
+  float: left;
+  
+} 
+
+input[type=text], input[type=email] { 
+  width: 100%;
+  background-color: #536594;
+  border-radius: 8px;
+  outline:1px solid;
+  isolation: isolate;
+  margin-bottom: 5px;
+}
+
+input:focus {
+  outline-color: #e7e482;
+}
+
+
+textarea {
+  width: 100%;
+  resize: none;
+  background-color: #536594;
+  border-radius: 8px;
+  outline: 1px solid ;
+  
+
+}
+
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+textarea:focus {
+  outline-color: #e7e482
+}
+
+#submit {
+  background-color: #e7e482;
+  color: #232B3F;
+  font-size: 16px;
+  text-align: center;
+  float: right;
+  border-radius: 8px;
+  outline:1px solid;
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding: 5px;
+  width: 100%;
+}
+  
+
+
+#submit:hover {
+  background-color: #232B3F;
+  color: white;
+  border: 1px solid #e7e482;
 }
 
 #footer {
   position: relative;
-  background-color:  #536594;
+  background-color: #232B3F ;
   color: white;
   text-align: center;
   outline-style: solid;
   outline-color:#e7e482;
-  outline-width: 5px;
-}
-#footer {
-  grid-column: 1 / 5;
-  grid-row: 4 / 5;
-}
-
-#footer::before {
-background-image: url(../images/footer-michael-dziedzic-qDG7XKJLKbs-unsplash.JPG);
-background-size: cover;
-content: "";
-position: absolute;
-inset: 0;
-opacity: 0.6;
+  outline-width: 2px;
 }
 
 @media screen and (min-width: 600px) {
@@ -262,15 +364,20 @@ opacity: 0.6;
 
  nav ul {
   list-style-type: none;
+  float: right;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  
+
 }
 
+nav li {
+  float: left;
+}
 nav a {
 
   display: block;
-  float: right;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -279,10 +386,16 @@ nav a {
 }
 
 nav a:hover {
-  font-size: 30px; 
+   background-color: #232B3F;
+   color: white;
+   border-radius: 10px;
 }
 
-  
+.active {
+  background-color: #e7e482; 
+  color: #232B3F; 
+  border-radius: 10px;
+}
 .nav-toggle {
   position: absolute;
   opacity: 0;
@@ -295,6 +408,103 @@ nav a:hover {
   
 }
 
+hr.rounded {
+  border-top: 1px solid #e7e482;
+  border-radius: 5px;
+  width: 98%;
+  margin: 5px auto;
+  isolation: isolate; 
+  display: block;
+}
+
+#project {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                      "projectheading projectheading projectheading projectheading projectheading projectheading"
+                      ". projectone projectone projecttwo projecttwo ."
+                      ". projectthree projectthree projectfour projectfour .";
+  column-gap: 3em;
+  row-gap: 3em;
+}
+}
 
 
+@media only screen and (min-width: 768px) {
+
+
+   
+  #contactme {
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
+   grid-template-areas: "nav nav nav nav nav nav"
+                       "contactheading contactheading contactheading contactheading contactheading contactheading"
+                       ". connectinvite connectinvite connectinvite connectinvite ."
+                       ". contactform contactform contactform contactform ."
+                       "footer footer footer footer footer footer";
+  column-gap: 0;
+  row-gap: 3em;
+
+  }
+}
+
+@media only screen and (min-width:  992px) {
+
+   #project {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                      "projectheading projectheading projectheading projectheading projectheading projectheading"
+                      " . projectone projecttwo projectthree projectfour . ";
+  column-gap: 3em;
+  row-gap: 3em;
+  height: 100vh;
+}
+
+  #contactme {
+  display: grid;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "contactheading contactheading contactheading contactheading contactheading contactheading"
+                       ". connectinvite connectinvite contactform contactform ."
+                       "footer footer footer footer footer footer";
+  column-gap: 3em;
+  row-gap:3em;
+}
+  #submit {
+    width: 50%;
+  }
+
+}
+
+@media only screen and (min-width:  1220px) {
+
+  #index {
+  display: grid;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". . bio bio . .";
+                 
+  }
+
+   #contactme {
+  display: grid;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "contactheading contactheading contactheading contactheading contactheading contactheading"
+                       ". connectinvite connectinvite contactform contactform ."
+                       "footer footer footer footer footer footer";
+  column-gap: 3em;
+  row-gap:3em;
+  height: 100vh;
+} 
+
+  #submit {
+    width: 20%;
+  }
 }
