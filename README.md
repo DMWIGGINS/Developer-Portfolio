@@ -120,3 +120,35 @@ Footer
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {...}
+
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+}
+
+input {
+  width: 100%
+}
+
+button {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+.profile {
+font-size: clamp(1rem, 5vw + .5rem, 1.5rem);
+}
+
+
+
